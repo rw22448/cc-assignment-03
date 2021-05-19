@@ -120,3 +120,35 @@ API for user-related features, such as creating a user, fetching a user, updatin
 - Status: 404, JSON: `{ error: "User 'rw22448' does not exist" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X DELETE https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/delete-user-by-username/rw22448`
+
+<br /><hr /><br />
+
+## /login
+
+**URL:** `/users/login`
+
+**Method:** `POST`
+
+**URL (query) params:**
+
+- None
+
+**Data (body) params:**
+
+- `username=[string]` REQUIRED
+- `password=[string]` REQUIRED
+
+**Success responses:**
+
+- Status: 200, JSON: `{ username : username, token: token }`
+
+**Error responses:**
+
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 400, JSON: `{ error: "Unable to fetch users" }`
+- Status: 400, JSON: `{ error: "Unable to complete request" }`
+- Status: 401, JSON: `{ error: "Incorrect username and/or password" }`
+
+**Example:** `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/login -d '{"username": "rw22448", "password": "rw22448"}'`
+
+**Notes:** Token is used for authentication inside the main application and needs to be added to every further request. Therefore, it is wise to store the token in local storage for reuse.
