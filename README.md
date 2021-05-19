@@ -1,5 +1,11 @@
 # cc-assignment-03
 
+## Repositories
+
+- [cc-assignment-03](https://github.com/rw22448/cc-assignment-03)
+- [cc-assignment-03-frontend](https://github.com/rw22448/cc-assignment-03-frontend)
+- [cc-assignment-03-backend](https://github.com/rw22448/cc-assignment-03-backend)
+
 ## Group
 
 - Alvin Markus Hui | s3677729

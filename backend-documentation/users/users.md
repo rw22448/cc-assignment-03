@@ -1,0 +1,13 @@
+# /users
+
+API for user-related features, such as creating a user, fetching a user, updating user details, etc.
+
+## Base URL
+
+- Local: `http://localhost:3000`
+- Dev: `https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev`
+
+| URL                                     | Method | URL (query) params             | Data (body) params                                                   | Success response                               | Error response                                                                                                                                                                                                             | Example                                                                                                                                                                             | Notes |
+| --------------------------------------- | ------ | ------------------------------ | -------------------------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| `/users/get-user-by-username/:username` | `GET`  | - `username=[string]` REQUIRED | None                                                                 | - Status: 200, JSON: `{ username : username }` | - Status: 400, JSON: `{ error : "Bad request" }` <br /> - Status: 400, JSON: `{ error : "Unable to fetch user" }` <br /> - Status: 404, JSON: `{ error : "User not found" }`                                               | `curl -H "Content-Type: application/json" -X GET https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/get-user-by-username/rw22448`                                     |       |
+| `/users/create-user`                    | `POST` | None                           | - `username=[string]` REQUIRED <br /> - `password=[string]` REQUIRED | - Status: 200, JSON: `{ username : username }` | - Status: 400, JSON: `{ error : "Username and/or password must be a string" }` <br /> - Status: 400, JSON: `{ error : "Unable to create user" }` <br /> - Status: 400, JSON: `{ error : "User 'rw22448" already exists' }` | `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/create-user -d '{"username": "rw22448", "password": "rw22448"}'` |       |
