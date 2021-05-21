@@ -6,6 +6,10 @@
 - [cc-assignment-03-frontend](https://github.com/rw22448/cc-assignment-03-frontend)
 - [cc-assignment-03-backend](https://github.com/rw22448/cc-assignment-03-backend)
 
+## Links
+
+- [Report](https://drive.google.com/file/d/1aSiUzcPYVQyph5LVfrWsn3wKpotoq9dF/view?usp=sharing)
+
 ## Group
 
 - Alvin Markus Hui | s3677729
@@ -19,7 +23,7 @@
 
 | Task                                                                            | Status  |
 | ------------------------------------------------------------------------------- | ------- |
-| Create a report                                                                 | &cross; |
+| Create a report                                                                 | &check; |
 | Sign the Signed Contribution Agreement                                          | &cross; |
 | Link the live URL of the project                                                | &cross; |
 | Link the repository URLs                                                        | &cross; |
@@ -36,6 +40,7 @@
 | Include data files in a folder (data/)                                          | &cross; |
 | Create presentation slides                                                      | &cross; |
 | Book a demonstration session with a tutor                                       | &cross; |
+| Finalise the report                                                             | &cross; |
 
 ## AWS services table
 
