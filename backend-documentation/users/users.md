@@ -25,7 +25,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Success responses:**
 
-- Status: 200, JSON: `{ username : username }`
+- Status: 200, JSON: `{ username : String }`
 
 **Error responses:**
 
@@ -54,7 +54,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Success responses:**
 
-- Status: 200, JSON: `{ username : username }`
+- Status: 200, JSON: `{ username : String }`
 
 **Error responses:**
 
@@ -83,7 +83,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Success responses:**
 
-- Status: 200, JSON: `{ username : username }`
+- Status: 200, JSON: `{ username : String }`
 
 **Error responses:**
 
@@ -111,7 +111,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Success responses:**
 
-- Status: 200, JSON: `{ username : username }`
+- Status: 200, JSON: `{ username : String }`
 
 **Error responses:**
 
@@ -140,7 +140,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Success responses:**
 
-- Status: 200, JSON: `{ username : username, token: token }`
+- Status: 200, JSON: `{ username : String, token: String }`
 
 **Error responses:**
 
