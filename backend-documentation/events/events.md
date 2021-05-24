@@ -95,3 +95,35 @@ API for events, including creating an event, deleting an event, fetching an even
 - Status: 404, JSON: `{ error : "Event does not exist found" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X DELETE https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/delete-event-by-id/672efe76-4e3a-4f0b-8897-056940f0e9b8`
+
+<br /><hr /><br />
+
+## /update-event
+
+**URL:** `/events/update-event`
+
+**Method:** `PUT`
+
+**URL (query) params:**
+
+- None
+
+**Data (body) params:**
+
+- `id=[string]` REQUIRED
+- `title=[string]`
+- `description=[string]`
+- `startTime=[string]`
+- `endTime=[string]`
+
+**Success responses:**
+
+- Status: 200, JSON: `{"id": String }`
+
+**Error responses:**
+
+- Status: 400, JSON: `{ error : "Bad request" }`
+- Status: 400, JSON: `{ error : "Unable to update event" }`
+- Status: 404, JSON: `{ error : "Event does not exist found" }`
+
+**Example:** `curl -H "Content-Type: application/json" -X PUT https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/update-event -d '{"id": "e2ed2576-32b0-4a31-be86-8d5c711301a7", "description": "This event is cool!"}'`
