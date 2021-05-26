@@ -17,7 +17,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **URL (query) params:**
 
-- `username=[string]` REQUIRED
+- `username: String` REQUIRED
 
 **Data (body) params:**
 
@@ -49,8 +49,8 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Data (body) params:**
 
-- `username=[string]` REQUIRED
-- `password=[string]` REQUIRED
+- `username: String` REQUIRED
+- `password: String` REQUIRED
 
 **Success responses:**
 
@@ -78,8 +78,8 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Data (body) params:**
 
-- `username=[string]` REQUIRED
-- `password=[string]` REQUIRED
+- `username: String` REQUIRED
+- `password: String` REQUIRED
 
 **Success responses:**
 
@@ -103,7 +103,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **URL (query) params:**
 
-- `username=[string]` REQUIRED
+- `username: String` REQUIRED
 
 **Data (body) params:**
 
@@ -135,8 +135,8 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Data (body) params:**
 
-- `username=[string]` REQUIRED
-- `password=[string]` REQUIRED
+- `username: String` REQUIRED
+- `password: String` REQUIRED
 
 **Success responses:**
 
