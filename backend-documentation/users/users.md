@@ -152,3 +152,30 @@ API for user-related features, such as creating a user, fetching a user, updatin
 **Example:** `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/login -d '{"username": "rw22448", "password": "rw22448"}'`
 
 **Notes:** Token is used for authentication inside the main application and needs to be added to every further request. Therefore, it is wise to store the token in local storage for reuse.
+
+<br /><hr /><br />
+
+## /logout
+
+**URL:** `/users/logout`
+
+**Method:** `POST`
+
+**URL (query) params:**
+
+- None
+
+**Data (body) params:**
+
+- `username: String` REQUIRED
+
+**Success responses:**
+
+- Status: 200, JSON: `{ username : String }`
+
+**Error responses:**
+
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 400, JSON: `{ error: "Unable to fetch users" }`
+
+**Example:** `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/logout -d '{"username": "rw22448"}'`
