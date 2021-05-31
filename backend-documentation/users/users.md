@@ -25,12 +25,13 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Success responses:**
 
-- Status: 200, JSON: `{ username : String }`
+- Status: 200, JSON: `{ username : String, image: String (Base64) }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error : "Bad request" }`
 - Status: 400, JSON: `{ error : "Unable to fetch user" }`
+- Status: 400, JSON: `{ error : "Unable to complete request" }`
 - Status: 404, JSON: `{ error : "User not found" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X GET https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/get-user-by-username/rw22448`
@@ -51,18 +52,20 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 - `username: String` REQUIRED
 - `password: String` REQUIRED
+- `image: String (Base64)` REQUIRED
 
 **Success responses:**
 
-- Status: 200, JSON: `{ username : String }`
+- Status: 200, JSON: `{ username : String, image: String (Base64) }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error : "Username and/or password must be a string" }`
-- Status: 400, JSON: `{ error : "Unable to create user" }`
+- Status: 400, JSON: `{ error : "Image must be provided" }`
 - Status: 409, JSON: `{ error : "User 'rw22448" already exists' }`
+- Status: 400, JSON: `{ error : "Unable to complete request" }`
 
-**Example:** `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/create-user -d '{"username": "rw22448", "password": "rw22448"}'`
+**Example:** `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/create-user -d '{"username": "rw22448", "password": "rw22448", "image": "<Base64 encoded String here>"}'`
 
 <br /><hr /><br />
 
