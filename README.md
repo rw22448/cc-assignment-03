@@ -49,11 +49,12 @@
 | AWS Lambda            | &cross; | 5      |
 | AWS API Gateway       | &cross; | 5      |
 | AWS Elastic Beanstalk | &cross; | 5      |
-| AWS S3                | &cross; | 2      |
+| AWS S3                | &check; | 2      |
 | AWS DynamoDB          | &cross; | 2      |
+| AWS EC2               | &cross; | 2      |
 
 **Total required: 30 points**
 
-Proposed total: 19 points
+Proposed total: 21 points
 
-**Implemented total: 0 points**
+**Implemented total: 2 points**
