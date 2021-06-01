@@ -8,7 +8,7 @@
 
 ## Links
 
-- [Report](https://drive.google.com/file/d/1aSiUzcPYVQyph5LVfrWsn3wKpotoq9dF/view?usp=sharing)
+- [Report](https://docs.google.com/document/d/1Qa9zFfUXDQuWpU_iuvPYOeOJoEjimfYTi_20sckT5iY/edit?usp=sharing)
 
 ## Group
 
@@ -38,7 +38,6 @@
 | Include a link for source code folder (.zip, Google Drive, etc.)                | &cross; |
 | Include runnable files in a folder (deploy/)                                    | &cross; |
 | Include data files in a folder (data/)                                          | &cross; |
-| Create presentation slides                                                      | &cross; |
 | Book a demonstration session with a tutor                                       | &cross; |
 | Finalise the report                                                             | &cross; |
 
@@ -46,15 +45,14 @@
 
 | Service implemented   | Status  | Points |
 | --------------------- | ------- | ------ |
-| AWS Lambda            | &cross; | 5      |
-| AWS API Gateway       | &cross; | 5      |
-| AWS Elastic Beanstalk | &cross; | 5      |
+| AWS Lambda            | &check; | 5      |
+| AWS API Gateway       | &check; | 5      |
+| AWS Elastic Beanstalk | &check; | 5      |
 | AWS S3                | &check; | 2      |
-| AWS DynamoDB          | &cross; | 2      |
-| AWS EC2               | &cross; | 2      |
+| AWS DynamoDB          | &check; | 2      |
 
 **Total required: 30 points**
 
-Proposed total: 21 points
+Proposed total: 19 points
 
-**Implemented total: 2 points**
+**Implemented total: 19 points**
