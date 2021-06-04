@@ -25,8 +25,8 @@
 | ------------------------------------------------------------------------------- | ------- |
 | Create a report                                                                 | &check; |
 | Sign the Signed Contribution Agreement                                          | &cross; |
-| Link the live URL of the project                                                | &cross; |
-| Link the repository URLs                                                        | &cross; |
+| Link the live URL of the project                                                | &check; |
+| Link the repository URLs                                                        | &check; |
 | Write a summary of the project                                                  | &cross; |
 | Write an introduction about the project                                         | &cross; |
 | Write about related work for the project                                        | &cross; |
@@ -34,7 +34,7 @@
 | Describe the purpose of each component in the diagram                           | &cross; |
 | Create a developer manual/onboarding guide                                      | &cross; |
 | Create a small user manual for how to use the application (quickstart)          | &cross; |
-| Write references                                                                | &cross; |
+| Write references                                                                | &check; |
 | Include a link for source code folder (.zip, Google Drive, etc.)                | &cross; |
 | Include runnable files in a folder (deploy/)                                    | &cross; |
 | Include data files in a folder (data/)                                          | &cross; |
