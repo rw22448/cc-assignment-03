@@ -35,9 +35,9 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Error responses:**
 
-- Status: 400, JSON: `{ error : "Bad request" }`
-- Status: 400, JSON: `{ error : "Unable to create event" }`
-- Status: 401, JSON: `{ error : "Unauthorized" }`
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 400, JSON: `{ error: "Unable to create event" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
 
 **Example:** `curl -H "Content-Type: application/json" -H "cc-authentication-user: 84422wr" -H "cc-authentication-token: 6207adb3-521f-46cc-84cf-e00acb5e515c" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/create-event -d '{"title": "Road trip", "description": "Annual interstate road trip", "creator": "84422wr", "startTime": "2021-05-22T8:30:00.000Z", "endTime": "2021-05-22T11:30:00.000Z"}'`
 
@@ -65,10 +65,10 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Error responses:**
 
-- Status: 400, JSON: `{ error : "Bad request" }`
-- Status: 400, JSON: `{ error : "Unable to fetch event" }`
-- Status: 404, JSON: `{ error : "Event not found" }`
-- Status: 401, JSON: `{ error : "Unauthorized" }`
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 400, JSON: `{ error: "Unable to fetch event" }`
+- Status: 404, JSON: `{ error: "Event not found" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
 
 **Example:** `curl -H "Content-Type: application/json" -H "cc-authentication-user: 84422wr" -H "cc-authentication-token: 6207adb3-521f-46cc-84cf-e00acb5e515c" -X GET https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/get-event-by-id/672efe76-4e3a-4f0b-8897-056940f0e9b8`
 
@@ -94,10 +94,10 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Error responses:**
 
-- Status: 400, JSON: `{ error : "Bad request" }`
-- Status: 400, JSON: `{ error : "Unable to delete event" }`
-- Status: 404, JSON: `{ error : "Event does not exist" }`
-- Status: 401, JSON: `{ error : "Unauthorized" }`
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 400, JSON: `{ error: "Unable to delete event" }`
+- Status: 404, JSON: `{ error: "Event does not exist" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
 
 **Example:** `curl -H "Content-Type: application/json" -H "cc-authentication-user: 84422wr" -H "cc-authentication-token: 6207adb3-521f-46cc-84cf-e00acb5e515c" -X DELETE https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/delete-event-by-id/672efe76-4e3a-4f0b-8897-056940f0e9b8`
 
@@ -127,10 +127,10 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Error responses:**
 
-- Status: 400, JSON: `{ error : "Bad request" }`
-- Status: 400, JSON: `{ error : "Unable to update event" }`
-- Status: 404, JSON: `{ error : "Event does not exist" }`
-- Status: 401, JSON: `{ error : "Unauthorized" }`
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 400, JSON: `{ error: "Unable to update event" }`
+- Status: 404, JSON: `{ error: "Event does not exist" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
 
 **Example:** `curl -H "Content-Type: application/json" -H "cc-authentication-user: 84422wr" -H "cc-authentication-token: 6207adb3-521f-46cc-84cf-e00acb5e515c" -X PUT https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/update-event -d '{"id": "e2ed2576-32b0-4a31-be86-8d5c711301a7", "description": "This event is cool!"}'`
 
@@ -157,10 +157,10 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Error responses:**
 
-- Status: 400, JSON: `{ error : "Bad request" }`
-- Status: 400, JSON: `{ error : "Unable to update event" }`
-- Status: 404, JSON: `{ error : "Event does not exist" }`
-- Status: 401, JSON: `{ error : "Unauthorized" }`
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 400, JSON: `{ error: "Unable to update event" }`
+- Status: 404, JSON: `{ error: "Event does not exist" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
 
 **Example:** `curl -H "Content-Type: application/json" -H "cc-authentication-user: 84422wr" -H "cc-authentication-token: 6207adb3-521f-46cc-84cf-e00acb5e515c" -X PUT https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/add-attendees -d '{"id": "f0426f8e-b354-4d0a-b5bf-fd3ee99c588b", "attendees": ["rw22448"]}'`
 
@@ -187,9 +187,9 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Error responses:**
 
-- Status: 400, JSON: `{ error : "Bad request" }`
-- Status: 400, JSON: `{ error : "Unable to update event" }`
-- Status: 404, JSON: `{ error : "Event does not exist" }`
-- Status: 401, JSON: `{ error : "Unauthorized" }`
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 400, JSON: `{ error: "Unable to update event" }`
+- Status: 404, JSON: `{ error: "Event does not exist" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
 
 **Example:** `curl -H "Content-Type: application/json" -H "cc-authentication-user: 84422wr" -H "cc-authentication-token: 6207adb3-521f-46cc-84cf-e00acb5e515c" -X PUT https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/remove-attendees -d '{"id": "f0426f8e-b354-4d0a-b5bf-fd3ee99c588b", "attendees": ["rw22448"]}'`
