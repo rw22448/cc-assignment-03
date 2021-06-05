@@ -229,7 +229,7 @@ API for events, including creating an event, deleting an event, fetching an even
 
 ## /get-all-events
 
-**URL:** `/events/get-all-events`
+**URL:** `/public-events/get-all-events`
 
 **Method:** `GET`
 
