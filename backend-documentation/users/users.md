@@ -25,12 +25,12 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Success responses:**
 
-- Status: 200, JSON: `{ username: String }`
+- Status: 200, JSON: `{ username: String, created_events: String[], attending_events: String[] }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to fetch user" }`
+- Status: 500, JSON: `{ error: "Unable to fetch user" }`
 - Status: 404, JSON: `{ error: "User not found" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X GET https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/get-user-by-username/rw22448`
@@ -54,14 +54,14 @@ API for user-related features, such as creating a user, fetching a user, updatin
 
 **Success responses:**
 
-- Status: 200, JSON: `{ username: String }`
+- Status: 200, JSON: `{ username: String, created_events: String[], attending_events: String[] }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Username and/or password must be provided" }`
 - Status: 400, JSON: `{ error: "Username and/or password must be a string" }`
 - Status: 409, JSON: `{ error: "User 'rw22448' already exists' }`
-- Status: 400, JSON: `{ error: "Unable to complete request" }`
+- Status: 500, JSON: `{ error: "Unable to complete request" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/create-user -d '{"username": "rw22448", "password": "rw22448"}'`
 
@@ -89,7 +89,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to update user" }`
+- Status: 500, JSON: `{ error: "Unable to update user" }`
 - Status: 404, JSON: `{ error: "User 'rw22448' does not exist" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X PUT https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/update-user-password -d '{"username": "rw22448", "password": "newPassword"}'`
@@ -117,7 +117,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to delete user" }`
+- Status: 500, JSON: `{ error: "Unable to delete user" }`
 - Status: 404, JSON: `{ error: "User 'rw22448' does not exist" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X DELETE https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/delete-user-by-username/rw22448`
@@ -146,8 +146,8 @@ API for user-related features, such as creating a user, fetching a user, updatin
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to fetch users" }`
-- Status: 400, JSON: `{ error: "Unable to complete request" }`
+- Status: 500, JSON: `{ error: "Unable to fetch users" }`
+- Status: 500, JSON: `{ error: "Unable to complete request" }`
 - Status: 401, JSON: `{ error: "Incorrect username and/or password" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/login -d '{"username": "rw22448", "password": "rw22448"}'`
@@ -177,7 +177,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to fetch users" }`
+- Status: 500, JSON: `{ error: "Unable to fetch users" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/logout -d '{"username": "rw22448"}'`
 
@@ -204,7 +204,7 @@ API for user-related features, such as creating a user, fetching a user, updatin
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to complete request, user image may not exist" }`
+- Status: 500, JSON: `{ error: "Unable to complete request, user image may not exist" }`
 - Status: 404, JSON: `{ error: "User image does not exist" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X GET https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/images/get-image-by-username/rw22448`
@@ -233,6 +233,68 @@ API for user-related features, such as creating a user, fetching a user, updatin
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to complete request" }`
+- Status: 500, JSON: `{ error: "Unable to complete request" }`
 
 **Example:** `curl -H "Content-Type: application/json" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/users/images/create-image -d '{"username": "rw2248", "image": "<Base64 encoded image here>"}'`
+
+<br /><hr /><br />
+
+## /add-to-created-events
+
+**URL:** `/users/add-to-created-events`
+
+**Method:** `PUT`
+
+**URL (query) params:**
+
+- None
+
+**Data (body) params:**
+
+- `username: String` REQUIRED
+- `id: String` REQUIRED
+
+**Success responses:**
+
+- Status: 200, JSON: `{ username: String, created_events: String[], attending_events: String[] }`
+
+**Error responses:**
+
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 500, JSON: `{ error: "Unable to update user" }`
+- Status: 404, JSON: `{ error: "User does not exist" }`
+
+**Example:** ``
+
+**Notes:** `id` is a String of the `id` property from the event, or the event ID. It is NOT an array.
+
+<br /><hr /><br />
+
+## /add-to-attending-events
+
+**URL:** `/users/add-to-attending-events`
+
+**Method:** `PUT`
+
+**URL (query) params:**
+
+- None
+
+**Data (body) params:**
+
+- `username: String` REQUIRED
+- `id: String` REQUIRED
+
+**Success responses:**
+
+- Status: 200, JSON: `{ username: String, created_events: String[], attending_events: String[] }`
+
+**Error responses:**
+
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 500, JSON: `{ error: "Unable to update user" }`
+- Status: 404, JSON: `{ error: "User does not exist" }`
+
+**Example:** ``
+
+**Notes:** `id` is a String of the `id` property from the event, or the event ID. It is NOT an array.

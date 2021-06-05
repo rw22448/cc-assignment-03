@@ -28,18 +28,19 @@ API for events, including creating an event, deleting an event, fetching an even
 - `creator: String` REQUIRED
 - `startTime: String` REQUIRED
 - `endTime: String` REQUIRED
+- `location: String` REQUIRED
 
 **Success responses:**
 
-- Status: 200, JSON: `{"id": String, "title": String, "description": String, "creator": String, "attendees": [String], "startTime": String, "endTime": String }`
+- Status: 200, JSON: `{ "id": String, "title": String, "description": String, "creator": String, "attendees": [String], "numberOfAttendees": int, "startTime": String, "endTime": String, "location": String, "pastEvent": boolean }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to create event" }`
+- Status: 500, JSON: `{ error: "Unable to create event" }`
 - Status: 401, JSON: `{ error: "Unauthorized" }`
 
-**Example:** `curl -H "Content-Type: application/json" -H "cc-authentication-user: 84422wr" -H "cc-authentication-token: 6207adb3-521f-46cc-84cf-e00acb5e515c" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/create-event -d '{"title": "Road trip", "description": "Annual interstate road trip", "creator": "84422wr", "startTime": "2021-05-22T8:30:00.000Z", "endTime": "2021-05-22T11:30:00.000Z"}'`
+**Example:** `curl -H "Content-Type: application/json" -H "cc-authentication-user: 84422wr" -H "cc-authentication-token: 6207adb3-521f-46cc-84cf-e00acb5e515c" -X POST https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/create-event -d '{"title": "Road trip", "description": "Annual interstate road trip", "creator": "84422wr", "startTime": "2021-05-22T8:30:00.000Z", "endTime": "2021-05-22T11:30:00.000Z", "location": "Sunny Beach"}'`
 
 **Notes:** `creator` should be ID of user that creates the event. `startTime` and `endTime` should be ISO timestamps of event time.
 
@@ -61,12 +62,12 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Success responses:**
 
-- Status: 200, JSON: `{"id": String, "title": String, "description": String, "creator": String, "attendees": [String], "startTime": String, "endTime": String }`
+- Status: 200, JSON: `{ "id": String, "title": String, "description": String, "creator": String, "attendees": [String], "numberOfAttendees": int, "startTime": String, "endTime": String, "location": String, "pastEvent": boolean }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to fetch event" }`
+- Status: 500, JSON: `{ error: "Unable to fetch event" }`
 - Status: 404, JSON: `{ error: "Event not found" }`
 - Status: 401, JSON: `{ error: "Unauthorized" }`
 
@@ -90,12 +91,12 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Success responses:**
 
-- Status: 200, JSON: `{"id": String }`
+- Status: 200, JSON: `{ "id": String }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to delete event" }`
+- Status: 500, JSON: `{ error: "Unable to delete event" }`
 - Status: 404, JSON: `{ error: "Event does not exist" }`
 - Status: 401, JSON: `{ error: "Unauthorized" }`
 
@@ -120,15 +121,16 @@ API for events, including creating an event, deleting an event, fetching an even
 - `description: String`
 - `startTime: String`
 - `endTime: String`
+- `location: String`
 
 **Success responses:**
 
-- Status: 200, JSON: `{"id": String }`
+- Status: 200, JSON: `{ "id": String }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to update event" }`
+- Status: 500, JSON: `{ error: "Unable to update event" }`
 - Status: 404, JSON: `{ error: "Event does not exist" }`
 - Status: 401, JSON: `{ error: "Unauthorized" }`
 
@@ -153,12 +155,12 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Success responses:**
 
-- Status: 200, JSON: `{"id": String, "attendees": String[] }`
+- Status: 200, JSON: `{ "id": String, "attendees": String[], "numberOfAttendees": int }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to update event" }`
+- Status: 500, JSON: `{ error: "Unable to update event" }`
 - Status: 404, JSON: `{ error: "Event does not exist" }`
 - Status: 401, JSON: `{ error: "Unauthorized" }`
 
@@ -183,13 +185,69 @@ API for events, including creating an event, deleting an event, fetching an even
 
 **Success responses:**
 
-- Status: 200, JSON: `{"id": String, "attendees": String[] }`
+- Status: 200, JSON: `{ "id": String, "attendees": String[], "numberOfAttendees": int }`
 
 **Error responses:**
 
 - Status: 400, JSON: `{ error: "Bad request" }`
-- Status: 400, JSON: `{ error: "Unable to update event" }`
+- Status: 500, JSON: `{ error: "Unable to update event" }`
 - Status: 404, JSON: `{ error: "Event does not exist" }`
 - Status: 401, JSON: `{ error: "Unauthorized" }`
 
 **Example:** `curl -H "Content-Type: application/json" -H "cc-authentication-user: 84422wr" -H "cc-authentication-token: 6207adb3-521f-46cc-84cf-e00acb5e515c" -X PUT https://avnaanvefh.execute-api.us-east-1.amazonaws.com/dev/events/remove-attendees -d '{"id": "f0426f8e-b354-4d0a-b5bf-fd3ee99c588b", "attendees": ["rw22448"]}'`
+
+<br /><hr /><br />
+
+## /toggle-past-event
+
+**URL:** `/events/toggle-past-event`
+
+**Method:** `PUT`
+
+**URL (query) params:**
+
+- None
+
+**Data (body) params:**
+
+- `id: String` REQUIRED
+
+**Success responses:**
+
+- Status: 200, JSON: `{ "id": String, "pastEvent": boolean }`
+
+**Error responses:**
+
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 500, JSON: `{ error: "Unable to update event" }`
+- Status: 404, JSON: `{ error: "Event does not exist" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
+
+**Example:** ``
+
+<br /><hr /><br />
+
+## /get-all-events
+
+**URL:** `/events/get-all-events`
+
+**Method:** `GET`
+
+**URL (query) params:**
+
+- None
+
+**Data (body) params:**
+
+- None
+
+**Success responses:**
+
+- Status: 200, JSON: `{ "events": [{<Event>}] }`
+
+**Error responses:**
+
+- Status: 500, JSON: `{ error: "Scan could not be completed" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
+
+**Example:** ``
