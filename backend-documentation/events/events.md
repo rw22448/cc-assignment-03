@@ -251,3 +251,60 @@ API for events, including creating an event, deleting an event, fetching an even
 - Status: 401, JSON: `{ error: "Unauthorized" }`
 
 **Example:** ``
+
+<br /><hr /><br />
+
+## /get-events-by-creator/:username
+
+**URL:** `/get-events-by-creator/:username`
+
+**Method:** `GET`
+
+**URL (query) params:**
+
+- `username: String` REQUIRED
+
+**Data (body) params:**
+
+- None
+
+**Success responses:**
+
+- Status: 200, JSON: `{ "events": [{<Event>}] }`
+
+**Error responses:**
+
+- Status: 500, JSON: `{ error: "Unable to fetch event" }`
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
+
+**Example:** ``
+
+<br /><hr /><br />
+
+## /get-events-by-username/:username
+
+**URL:** `/get-events-by-username/:username`
+
+**Method:** `GET`
+
+**URL (query) params:**
+
+- `username: String` REQUIRED
+
+**Data (body) params:**
+
+- None
+
+**Success responses:**
+
+- Status: 200, JSON: `{ "username": String, "attending_events": [{<Event>}] }`
+
+**Error responses:**
+
+- Status: 500, JSON: `{ error: "Unable to fetch event" }`
+- Status: 400, JSON: `{ error: "Bad request" }`
+- Status: 401, JSON: `{ error: "Unauthorized" }`
+- Status: 404, JSON: `{ error: "User not found, user may not currently be attending events" }`
+
+**Example:** ``
