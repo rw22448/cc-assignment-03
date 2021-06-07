@@ -5,6 +5,7 @@
 - [cc-assignment-03](https://github.com/rw22448/cc-assignment-03)
 - [cc-assignment-03-frontend](https://github.com/rw22448/cc-assignment-03-frontend)
 - [cc-assignment-03-backend](https://github.com/rw22448/cc-assignment-03-backend)
+- [cc-assignment-03-cron](https://github.com/rw22448/cc-assignment-03-cron)
 
 ## Links
 
@@ -50,9 +51,10 @@
 | AWS Elastic Beanstalk | &check; | 5      |
 | AWS S3                | &check; | 2      |
 | AWS DynamoDB          | &check; | 2      |
+| AWS EC2               | &check; | 2      |
 
 **Total required: 30 points**
 
-Proposed total: 19 points
+Proposed total: 21 points
 
-**Implemented total: 19 points**
+**Implemented total: 21 points**
