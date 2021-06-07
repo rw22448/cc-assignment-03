@@ -28,8 +28,8 @@
 | Sign the Signed Contribution Agreement                                          | &cross; |
 | Link the live URL of the project                                                | &check; |
 | Link the repository URLs                                                        | &check; |
-| Write a summary of the project                                                  | &cross; |
-| Write an introduction about the project                                         | &cross; |
+| Write a summary of the project                                                  | &check; |
+| Write an introduction about the project                                         | &check; |
 | Write about related work for the project                                        | &check; |
 | Include an architectural diagram to show communication between cloud components | &cross; |
 | Describe the purpose of each component in the diagram                           | &cross; |
