@@ -10,6 +10,7 @@
 ## Links
 
 - [Report](https://docs.google.com/document/d/1Qa9zFfUXDQuWpU_iuvPYOeOJoEjimfYTi_20sckT5iY/edit?usp=sharing)
+- [Website](http://cc-ass-03-fe-dev.us-east-1.elasticbeanstalk.com/)
 
 ## Group
 
@@ -25,22 +26,22 @@
 | Task                                                                            | Status  |
 | ------------------------------------------------------------------------------- | ------- |
 | Create a report                                                                 | &check; |
-| Sign the Signed Contribution Agreement                                          | &cross; |
+| Sign the Signed Contribution Agreement                                          | &check; |
 | Link the live URL of the project                                                | &check; |
 | Link the repository URLs                                                        | &check; |
 | Write a summary of the project                                                  | &check; |
 | Write an introduction about the project                                         | &check; |
 | Write about related work for the project                                        | &check; |
-| Include an architectural diagram to show communication between cloud components | &cross; |
-| Describe the purpose of each component in the diagram                           | &cross; |
-| Create a developer manual/onboarding guide                                      | &cross; |
-| Create a small user manual for how to use the application (quickstart)          | &cross; |
+| Include an architectural diagram to show communication between cloud components | &check; |
+| Describe the purpose of each component in the diagram                           | &check; |
+| Create a developer manual/onboarding guide                                      | &check; |
+| Create a small user manual for how to use the application (quickstart)          | &check; |
 | Write references                                                                | &check; |
-| Include a link for source code folder (.zip, Google Drive, etc.)                | &cross; |
-| Include runnable files in a folder (deploy/)                                    | &cross; |
-| Include data files in a folder (data/)                                          | &cross; |
+| Include a link for source code folder (.zip, Google Drive, etc.)                | &check; |
+| Include runnable files in a folder (deploy/)                                    | /       |
+| Include data files in a folder (data/)                                          | /       |
 | Book a demonstration session with a tutor                                       | &cross; |
-| Finalise the report                                                             | &cross; |
+| Finalise the report                                                             | &check; |
 
 ## AWS services table
 
